@@ -3,6 +3,7 @@
 namespace Gedmo\Loggable\Entity\MappedSuperclass;
 
 use Doctrine\ORM\Mapping as ORM;
+use Carbon\ApiBundle\Annotation AS Carbon;
 
 /**
  * Gedmo\Loggable\Entity\AbstractLog
@@ -45,6 +46,7 @@ abstract class AbstractLogEntry
      * @var string $objectClass
      *
      * @ORM\Column(name="object_class", type="string", length=255)
+     * @Carbon\Searchable(name="objectClass")
      */
     protected $objectClass;
 
@@ -59,6 +61,7 @@ abstract class AbstractLogEntry
      * @var string $data
      *
      * @ORM\Column(type="array", nullable=true)
+     * @Carbon\Searchable(name="data")
      */
     protected $data;
 
